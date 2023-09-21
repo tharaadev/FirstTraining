@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+
+  
+} 
+
+.inputstyle {
+   @apply border border-gray-900 outline-none rounded-lg indent-2  w-[70%] mx-auto  block  max-sm:w-[80%]
+}
+.labelstyle{
+  @apply  w-[10%] mr-7 p-2  text-lg block
+}
+.buttonstyle{
+  @apply border border-slate-950 rounded-xl p-2 capitalize   max-sm:m-4 max-sm:p-1
+ } 
+ 
