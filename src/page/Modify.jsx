@@ -1,31 +1,41 @@
 import React, { useEffect, useState } from"react";
+import { useRef } from "react";
+import { Outlet, useParams } from "react-router-dom";
 const Modify = ({items}) => {
-    
-const[ gmail,setGmail]=useState("");
-const[  password,setPassword]=useState("")
+// const[ gmail,setGmail]=useState("" );
+// const[  password,setPassword]=useState( "")
+const {id_mod}=useParams();
 const[auth,setAuth]=useState(false);
 
+const gmailRef=useRef();
+const passwordRef=useRef();
 
 
-const[modifiedData,setModifiedData]=useState("");
+const data= items.find((el)=>(el.id == id_mod)
+  
+)
+ 
 
 const modifyHandler=(e)=>{
     e.preventDefault();
-    const Newdata=({
-       password,
-       gmail, 
-       });
-       setModifiedData(Newdata);
-    //    if(modifiedData.password === items.password){
-    //     setAuth(!auth);
-    
-      // }
-    //   console.log(auth)
+    const Newdata={
+        password :passwordRef.current.value,
+        gmail:gmailRef.current.value, 
+     
+        };
+   
+     
+      if(Newdata.password == data.password && Newdata.gmail == data.gmail ){
+       
+     
+    }
 
 
-}
 
-console.log(modifiedData)
+    }
+
+
+
     return ( 
     
     
@@ -35,17 +45,23 @@ console.log(modifiedData)
 
         <div className="flex items-center justify-between  my-2 max-sm:flex-col "> 
     <label className=" labelstyle  text-[#074e557a]" htmlFor="gmail">gmail </label>
-    <input className="inputstyle" type="gmail"   id="gmail"  value={gmail}  onChange={(e)=>setGmail(e.target.value)}/>
+    <input className="inputstyle" type="email"   id="gmail" ref={gmailRef} 
+    //onChange={popo}
+    // value={gmail}  onChange={(e)=>setGmail(e.target.value)}
+     />
     </div>
 
   
     <div className="flex items-center justify-between  my-2 max-sm:flex-col  "> 
             <label className=" labelstyle text-[#074e557a]" htmlFor="password">password </label>
-            <input className="inputstyle" type="passwoed"  id="password" value={password}  onChange={(e)=>setPassword(e.target.value)}/>
+            <input className="inputstyle" type="password"  id="password"  ref={passwordRef} 
+            //onChange={popo}
+            //value={password}  onChange={(e)=>setPassword(e.target.value)}
+            />
             </div>
 
             <div className=" flex  justify-around my-12 max-sm:flex-col ">
-            <button className="buttonstyle bg-[#074e557a] " type="submit">Enter</button>
+            <button className="buttonstyle bg-[#074e557a]  " type="submit">Enter</button>
             <button className="buttonstyle  bg-[#074e557a]" type="reset"    onClick={()=>navigate("/")} > go back</button>
             </div>
 

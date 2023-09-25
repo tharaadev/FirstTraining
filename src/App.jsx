@@ -6,6 +6,7 @@ import Root from './component/Root';
 import Create from './page/Create';
 import Modify from './page/Modify';
 import Card from './page/Card';
+import Childcreate from './page/Childcreate';
 
 
 
@@ -19,7 +20,7 @@ function App() {
     address:"karto",
     title:" iam learning front-end and now train on the react",
     gmail:"tharaaIbrahem@gmail.com",
-    password:111222333
+    password: 111222333
 
   },
 {
@@ -41,7 +42,10 @@ function App() {
         <Route index element={<Home items={items} setItems={setItems} />} />
         <Route path="create" element={<Create  setItems={setItems}/>}/>
      
-        <Route path="modify" element ={<Modify items={items}/>}/>
+        <Route path="modify/:id_mod" element ={<Modify items={items}/>}>
+      
+
+          </Route>
         
         <Route path="*" element={<NotFound/>}/>
       </Route>

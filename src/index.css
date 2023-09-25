@@ -22,7 +22,7 @@
    @apply border border-gray-900 outline-none rounded-lg indent-2  w-[70%] mx-auto  block  max-sm:w-[80%]
 }
 .labelstyle{
-  @apply  w-[10%] mr-7 p-2  text-lg block
+  @apply  w-[10%] mr-7 p-2  text-lg block max-sm:mr-8
 }
 .buttonstyle{
   @apply border border-slate-950 rounded-xl p-2 capitalize   max-sm:m-4 max-sm:p-1

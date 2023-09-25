@@ -14,7 +14,7 @@ const Card = ({names,DeletFunc}) => {
        <div className ="  flex  justify-end "     >
        <div className= "    w-fit h-fit pb-4 hover:animate-wiggle mx-3" >
             <IoMdTrash size="30px" color="purple" onClick={(e)=>DeletFunc(e,names.id)}/></div>
-            <Link to={"modify"}  className= "w-fit h-fit pb-5 hover:animate-wiggle  mx-3"  >
+            <Link to={`modify/${names.id}`}   className= "w-fit h-fit pb-5 hover:animate-wiggle  mx-3"  >
             <IoPencilSharp size="30px" color="#3d383bb9" />
          </Link>
          </div>
